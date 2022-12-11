@@ -1,0 +1,21 @@
+N = gets.chomp.to_i
+
+A = gets.chomp.split.map(&:to_i)
+A.sort!
+
+ans = 1 # 巻数
+i = 0 # 配列のインデックス　
+
+while A.size > 0
+  if A[0] == ans
+    ans += 1
+    A.shift()
+  elsif A.size >=2
+    A.pop(2)
+    ans += 1
+  else
+    break
+  end
+end
+
+puts ans - 1

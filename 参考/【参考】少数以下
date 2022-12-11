@@ -1,0 +1,7 @@
+A,B = gets.chomp.split.map(&:to_i)
+
+
+ans = (B*1.0000/A).round(3)
+
+anser = sprintf("%10.3f", ans)
+puts anser.split
