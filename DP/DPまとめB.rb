@@ -6,6 +6,7 @@ N,K = gets.chomp.split(" ").map(&:to_i)
 H = gets.chomp.split(" ").map(&:to_i)
 
 # 先に配列を準備してあげる必要がある。
+# Float::INFINITYは不動小数点数における正の無限大で初期設定(そうすれば、必ずより低い数で上書きされる)
 dp = Array.new(N, Float::INFINITY)
 dp[0] = 0
 
