@@ -1,3 +1,5 @@
+# https://atcoder.jp/contests/dp/tasks/dp_c
+
 N = gets.chomp.to_i
 A = N.times.map { gets.chomp.split().map(&:to_i) }
 
