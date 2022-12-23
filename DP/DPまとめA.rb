@@ -14,7 +14,7 @@ end
 puts d[n-1]
 
 # 自身の回答
-
+∏
 # N = gets.chomp.to_i
 
 # H = gets.chomp.split.map(&:to_i)
