@@ -1,4 +1,19 @@
 # each
+["a","b","c"].each.with_index do |a,i|
+  p "#{a} #{i}"
+end
+# =>
+# "a 0"
+# "b 1"
+# "c 2"
+
+["a","b","c"].each.with_index(2) do |a,i|
+  p "#{a} #{i}"
+end
+# =>
+# "a 2"
+# "b 3"
+# "c 4"
 
 # times
 n = 10000000

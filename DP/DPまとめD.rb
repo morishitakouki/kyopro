@@ -7,7 +7,7 @@ dp=[0]*(w+1)
 wv.each do |x,y|
   (w-x).downto(0).each{|i|dp[i+x]=[dp[i+x],dp[i]+y].max}
 end
-p dp
+p dp.last
 
 
 # 自身の回答
