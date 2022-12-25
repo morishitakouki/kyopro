@@ -1,9 +1,35 @@
-# 1回目は1/6
+require 'set'
 
+set = Set.new
 
+input = gets.chomp.split(//).map(&:to_s)
 
-p 665 * 7 % (365*3 + 364)
+n = input.index(")")
 
-p 665 * 7 / (365*3 + 364)
+if n == nil
+  puts "No"
+  return
+end
 
-p 31 + 28 + 31 + 30 + 31 + 30 +31 + 31 + 30
+while n
+  tmp = input[0..n]
+  # p tmp
+  m = tmp.length - tmp.reverse.index("(") - 1
+  # p "m#{m}"
+  tmp.delete("(")
+  tmp.delete(")")
+  if tmp.length != tmp.uniq.length
+    puts "No"
+    return
+  end
+  # p "ねこ#{m},#{n}"
+  input.slice!(m..n)
+  # pp input
+  n = input.index(")")
+  if n == nil || n == 0 || n == 1
+    puts "Yes"
+    return
+  end
+end
+
+puts "Yes"

@@ -1,3 +1,19 @@
+# if
+n = 11
+if n > 10
+  '10より大きい'
+elsif n > 5
+  '5より大きい'
+else
+  '5以下'
+end
+#=> "10より大きい"
+
+# 三項演算子
+n = 11
+message = n > 10 ? '10より大きい' : '10以下'
+p message #=> "10より大きい"
+
 # each
 ["a","b","c"].each.with_index do |a,i|
   p "#{a} #{i}"
@@ -30,23 +46,24 @@ while i < n
   i += 1
 end
 
-# CASE
-case 対象オブジェクト
-when 値1 then
-  値1と一致する場合に行う処理
-when 値2 then
-  値2と一致する場合に行う処理
+# CASE #when節に複数の値を指定する
+country = 'アメリカ'
+case country
+when 'japan', '日本'
+  'こんにちは'
+when 'us', 'アメリカ'
+  'Hello'
+when 'italy', 'イタリア'
+  'Ciao'
 else
-  どの値にも一致しない場合に行う処理
+  '???'
 end
+#=> "Hello"
 
 # downto (10から6を出力)
 10.downto(6) do |i|
   p i
 end
-
-
-
 
 # with_indexの応用 → セットのものを交互に配列に入れていく
 # inputは以下の形

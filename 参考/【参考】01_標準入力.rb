@@ -13,7 +13,7 @@ a = N.times.map { gets.chomp.to_i }
 
 # 複数行 配列
 N = gets.to_i
-a = N.times.map { gets.chomp.split().map(&:to_i) }
+input = N.times.map { gets.chomp.split().map(&:to_i) }
 
 
 # よくある

@@ -8,11 +8,18 @@
 h = {}        # 何も指定しないと、デフォルト値は`nil`。
 h = {:a=>1, :b=>2}
 
+# hashで中身を配列にする
+# https://qiita.com/k0kubun/items/beafb997c077cd72fdf6
+# https://docs.ruby-lang.org/ja/latest/method/Hash/s/new.html
+hash = Hash.new { |h, k| h[k] = [] }
+
 # 表示 ※作成時は{}、表示時は[]
 puts h[:a] # => 1
 
-# キーのものが存在するか
-h[:a].nil?
+# ハッシュの中に指定されたキーが存在するか
+currencies = { japan: 'yen', us: 'dollar', india: 'rupee' }
+currencies.has_key?(:japan) #=> true
+currencies.has_key?(:italy) #=> false
 
 # 追加
 h[:c]= 3
