@@ -1,31 +1,16 @@
-inp = gets.chomp.split(//).map(&:to_s)
+N,M = gets.chomp.split.map(&:to_i)
+input = N.times.map { gets.chomp.split(//).map{|i| i == "o" ? 1 : 0}.join.to_i }
 
-hash = {}
-arr = []
+ans = 0
 
-N = inp.length
+kumi = (0..(N-1)).to_a.combination(2).to_a
 
-N.times do |n|
-  # p inp[n]
-  case inp[n]
-  when "("
-    arr << inp[n]
-  when ")"
-    tmp = n -1
-    until arr.last == "("
-      a = arr.pop
-      hash[a] = false
-    end
-    arr.pop
-  else
-    if hash[inp[n]]
-      puts "No"
-      return
-    else
-      hash[inp[n]] = true
-      arr << inp[n]
-    end
+kumi.each do |_1,_2|
+  sum = (input[_1] + input[_2]).to_s
+  # pp sum
+  if sum.length == M && !sum.include?("0")
+    ans += 1
   end
 end
 
-puts "Yes"
+puts ans
