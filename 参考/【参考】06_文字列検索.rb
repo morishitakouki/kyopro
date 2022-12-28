@@ -7,6 +7,8 @@ a.include?("z")       #=> false
 p 'abcdefg'.count('c')               # => 1
 p '123456789'.count('2378')          # => 4
 p '123456789'.count('2-8', '^4-6')   # => 4
+# ダブルクオーテーションの検索
+double_count = S.count("\"")
 
 # 正規表現
 # https://userweb.mnet.ne.jp/nakama/

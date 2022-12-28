@@ -1,16 +1,21 @@
-N,M = gets.chomp.split.map(&:to_i)
-input = N.times.map { gets.chomp.split(//).map{|i| i == "o" ? 1 : 0}.join.to_i }
+N = gets.chomp.to_i
+s = gets.chomp.split(//).map(&:to_s)
+Double_max = s.count("\"")
+double_count = 0
 
-ans = 0
+i = 0
 
-kumi = (0..(N-1)).to_a.combination(2).to_a
-
-kumi.each do |_1,_2|
-  sum = (input[_1] + input[_2]).to_s
-  # pp sum
-  if sum.length == M && !sum.include?("0")
-    ans += 1
+while i < N
+  if s[i] == "\""
+    double_count += 1
+    # p double_count
+    # p Double_max
   end
+
+  if double_count.even?  && s[i] == ","
+    s[i] = "."
+  end
+  i += 1
 end
 
-puts ans
+puts s.join
